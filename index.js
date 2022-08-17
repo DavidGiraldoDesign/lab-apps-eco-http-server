@@ -1,48 +1,14 @@
 //1. Add requiere packages
-const cors = require('cors');
-const express = require('express');
+
 //2. Create an Express app
-const serverApp = express();
-const staticPublic = express.static('public');
 
 //3. Using middlewares: Static, JSON and CORS
-serverApp.use('/', staticPublic);
-serverApp.use(express.json());
-serverApp.use(cors({
-    origin: '*'
-}))
 
 //4. Start the server at a PORT
-serverApp.listen(5050, x => {
-    console.log('http://localhost:5050')
-});
 
+// Optional: create a object to store data.
 
-//________________________________
-
-let users = [{
-    name: 'David',
-    age: 26
-}]
-
-//________________________________
 //5. Create API endpoints
-serverApp.get('/Holi', (request, response) => {
-    response.send({
-        message: 'Holi ✌🏻'
-    });
-});
-
-serverApp.get('/get-users', (resquest, response) => {
-    response.send(users);
-});
-
-serverApp.post('/add-user', (resquest, response) => {
-    //console.log(resquest.body);
-    users.push(resquest.body);
-    console.log(users);
-    response.send({nms:'Oky'});
-});
 
 
 

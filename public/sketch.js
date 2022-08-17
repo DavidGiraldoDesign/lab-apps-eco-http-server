@@ -18,45 +18,27 @@ function draw() {
 
 function mouseClicked() {
     getUser();
-    let newUser = {
-        name: 'Luisa',
-        age: 21
-    };
-    
 }
 
 function keyPressed() {
     if (keyCode === RETURN) {
-        console.log('enter');
-        console.log(temporalUser.name);
-        postUser(temporalUser);
+        
     }
 }
 
 function myInputEvent() {
     console.log('you are typing: ', this.value());
-    temporalUser.name = this.value();
+
 }
 
 //__________________________________
 
 async function getUser() {
-    const response = await fetch('http://localhost:5050/get-users');
-    const data = await response.json();
-    console.log(data);
-    users.push(data);
+
 }
 
 async function postUser(newUser) {
-    const newUserJSON = JSON.stringify(newUser);
-    const httpMessage = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: newUserJSON
-    }
-    const response = await fetch('http://localhost:5050/add-user', httpMessage);
+
 }
 
 
